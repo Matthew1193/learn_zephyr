@@ -1,6 +1,6 @@
 / {
     aliases {
-        external_led = &my_ext_led;
+        external-led = &my_ext_led;
     };
 
     /* Add a custom node under root */
