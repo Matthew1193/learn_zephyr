@@ -1,0 +1,25 @@
+/ {
+    aliases {
+        external-button = &my_ext_but;
+        external-led = &my_ext_led;
+    };
+
+    my_external_buttons {
+        compatible = "gpio-keys";
+
+        my_ext_but: button_external {
+            gpios = <&gpio3 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+            label = "External Push Button";
+            zephyr,code = <INPUT_KEY_0>;
+        };
+    };
+
+    my_external_leds {
+        compatible = "gpio-leds";
+
+        my_ext_led: led_external {
+            gpios = <&gpio3 31 GPIO_ACTIVE_HIGH>;
+            label = "External LED";
+        };
+    };
+};
