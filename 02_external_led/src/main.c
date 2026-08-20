@@ -12,9 +12,13 @@ int main(void)
     }
 
     gpio_pin_configure_dt(&led, GPIO_OUTPUT_ACTIVE);
+    gpio_pin_toggle_dt(&led);
 
     while (1) {
-        gpio_pin_toggle_dt(&led);
+        gpio_pin_set_dt(&led, 1);
+        k_msleep(500);
+
+        gpio_pin_set_dt(&led, 0);
         k_msleep(500);
     }
 

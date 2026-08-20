@@ -3,13 +3,12 @@
         external-led = &my_ext_led;
     };
 
-    /* Add a custom node under root */
     my_external_leds {
         compatible = "gpio-leds";
 
         my_ext_led: led_external {
-            gpios = <&gpioa 5 GPIO_ACTIVE_HIGH>;
-            label = "External Breadboard LED";
+            gpios = <&gpio3 31 GPIO_ACTIVE_HIGH>;
+            label = "External LED";
         };
     };
 };
